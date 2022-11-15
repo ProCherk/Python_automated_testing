@@ -11,6 +11,8 @@ class TestHomepage:
     def test_homepage(self):
         driver = webdriver.Chrome()
         driver.implicitly_wait(10)
-        driver.find_element(By.CSS_SELECTOR, "globalSearchInputField")
+        driver.find_element(By.CSS_SELECTOR, '#id_123')
 
-        #wait = WebDriverWait(driver, 15, 0.3)  # driver, time, period
+        wait = WebDriverWait(driver, 15, 0.3)  # driver, time, period
+        element = wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, '#id_123')))
+        pass
