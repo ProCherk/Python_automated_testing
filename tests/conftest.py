@@ -8,7 +8,7 @@ def get_chrome_options():
     options = chrome_options()
     options.add_argument('chrome')  # use headless if you don`t need UI
     options.add_argument('--start-maximized')  # open window
-    options.add_argument('--window-size=1920,1080')  # window size
+    options.add_argument('--window-size=1600,1300')  # window size
     return options
 
 
