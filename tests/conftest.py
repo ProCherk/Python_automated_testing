@@ -8,14 +8,15 @@ def get_chrome_options():
     options = chrome_options()
     options.add_argument('chrome')  # use headless if you don`t need UI
     options.add_argument('--start-maximized')  # open window
-    options.add_argument('--window-size=1600,1300')  # window size
+    #options.add_argument('--window-size=1600,1300')  # window size
     return options
 
 
 @pytest.fixture
 def get_webdriver(get_chrome_options):
     options = get_chrome_options
-    driver = webdriver.Chrome(executable_path='C:\QA\ChromeDriver\chromedriver.exe', options=options)  # get Webdriver from system variables path
+    driver = webdriver.Chrome(executable_path='C:\QA\ChromeDriver\chromedriver.exe', options=options)  # get
+    # Webdriver from system variables path
     return driver
 
 
@@ -27,4 +28,4 @@ def setup(request, get_webdriver):
         request.cls.driver = driver
     driver.get(url)  # open url
     yield driver
-    driver.quit()
+    # driver.quit()
